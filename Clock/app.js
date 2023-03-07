@@ -6,6 +6,10 @@ setInterval(() => {
     let seconds = document.getElementById('seconds');
     let ampm = document.getElementById('ampm');
 
+    let hh = document.getElementById('hh');
+    let mm = document.getElementById('mm');
+    let ss = document.getElementById('ss');
+
     let h = new Date().getHours();
     let m = new Date().getMinutes();
     let s = new Date().getSeconds();
@@ -27,5 +31,12 @@ setInterval(() => {
     minutes.innerHTML = m;
     seconds.innerHTML = s;
     ampm.innerHTML = am;
+
+    // 12 hrs clock
+    hh.style.strokeDashoffset = 440 - (440 * h) / 12;
+    // 60 minutes 
+    mm.style.strokeDashoffset = 440 - (440 * m) / 60;
+    // 120 seconds
+    ss.style.strokeDashoffset = 440 - (440 * s) / 60;
 
 })
